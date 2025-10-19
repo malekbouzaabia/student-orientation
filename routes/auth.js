@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const {
-  registerStudent,
-  getStudentById,
-} = require("../controllers/authController"); // 👈 Import des fonctions du controller
+const { registerStudent, loginStudent, getStudentById } = require("../controllers/authController");
 
-// Route d'inscription
+// Inscription
 router.post("/enregistrer", registerStudent);
 
-// Route GET par ID
+// Connexion
+router.post("/loginStudent", loginStudent);
+
+// GET par ID
 router.get("/:id", getStudentById);
 
 module.exports = router;
